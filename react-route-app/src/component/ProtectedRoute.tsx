@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 type ProtectedRouteProps = {
   children: React.ReactNode;
@@ -9,7 +10,17 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   children,
   isAuthenticated,
 }) => {
-  return isAuthenticated ? <>{children}</> : <div>Please Log In</div>;
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate("/"); // Redirect to login page
+  };
+
+  return isAuthenticated ? (
+    <>{children}</>
+  ) : (
+    <button onClick={handleNavigation}>Please Log In</button>
+  );
 };
 
 export default ProtectedRoute;

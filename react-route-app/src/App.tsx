@@ -12,10 +12,12 @@ const App: React.FC = () => {
   return (
     <Router>
       <Routes>
+        {/* Login Route */}
         <Route
           path="/"
           element={<Login setIsAuthenticated={setIsAuthenticated} />}
         />
+        {/* Protected Routes */}
         <Route
           path="/dashboard"
           element={

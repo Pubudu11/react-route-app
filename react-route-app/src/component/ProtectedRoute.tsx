@@ -1,13 +1,15 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+
 type ProtectedRouteProps = {
   children: React.ReactNode;
   isAuthenticated: boolean;
 };
+
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   children,
   isAuthenticated,
 }) => {
-  return isAuthenticated ? <>{children}</> : <Navigate to="/" replace />;
+  return isAuthenticated ? <>{children}</> : <div>Please Log In</div>;
 };
+
 export default ProtectedRoute;

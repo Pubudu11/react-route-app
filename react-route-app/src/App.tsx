@@ -1,12 +1,14 @@
-import { useState } from 'react'
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import './App.css'
+import './App.css';
 import AddEmployeeComponent from "./component/AddEmployeeComponent";
 import ListEmployeeComponent from "./component/ListEmployeeComponent";
 import Login from "./component/Login";
 import ProtectedRoute from "./component/ProtectedRoute";
+
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   return (
     <Router>
       <Routes>
@@ -42,4 +44,5 @@ const App: React.FC = () => {
     </Router>
   );
 };
+
 export default App;

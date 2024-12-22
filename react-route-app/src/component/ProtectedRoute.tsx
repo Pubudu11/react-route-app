@@ -12,15 +12,18 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
 }) => {
   const navigate = useNavigate();
 
-  const handleNavigation = () => {
-    navigate("/"); // Redirect to login page
-  };
+  if (!isAuthenticated) {
+    return (
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <p style={{ color: "red" }}>You need to log in to access this page.</p>
+        <button onClick={() => navigate("/")} style={{ padding: "10px 20px" }}>
+          Go to Login
+        </button>
+      </div>
+    );
+  }
 
-  return isAuthenticated ? (
-    <>{children}</>
-  ) : (
-    <button onClick={handleNavigation}>Please Log In</button>
-  );
+  return <>{children}</>;
 };
 
 export default ProtectedRoute;

@@ -1,7 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const ListEmployeeComponent: React.FC = () => {
-  return <div>Welcome to the Employee List!</div>;
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <h2>Welcome to the Employee List!</h2>
+      <button onClick={() => navigate("/add-employee")} style={{ padding: "10px 20px", margin: "10px" }}>
+        Add Employee
+      </button>
+      <button onClick={() => navigate("/update-employee/1")} style={{ padding: "10px 20px", margin: "10px" }}>
+        Update Employee
+      </button>
+    </>
+  );
 };
 
 export default ListEmployeeComponent;

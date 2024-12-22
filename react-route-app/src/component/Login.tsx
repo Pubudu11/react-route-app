@@ -10,15 +10,15 @@ const Login: React.FC<LoginProps> = ({ setIsAuthenticated }) => {
   const [loggedOutMessage, setLoggedOutMessage] = useState(false);
 
   const handleLogin = () => {
-    setIsAuthenticated(true);  // Update the authentication state
-    setLoggedOutMessage(false);
-    navigate("/dashboard");  // Redirect to the dashboard
+    setIsAuthenticated(true); // Update authentication state
+    setLoggedOutMessage(false); // Clear any logged out message
+    navigate("/dashboard"); // Redirect to dashboard
   };
 
   const handleLogout = () => {
-    setIsAuthenticated(false);  // Log the user out
-    setLoggedOutMessage(true);  // Show the logged out message
-    navigate("/");  // Redirect to the login page
+    setIsAuthenticated(false); // Reset authentication state
+    setLoggedOutMessage(true); // Show logged out message
+    navigate("/"); // Redirect to login page
   };
 
   return (

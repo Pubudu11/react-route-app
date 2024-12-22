@@ -8,7 +8,7 @@ import ProtectedRoute from "./component/ProtectedRoute";
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-
+  console.log("isAuthenticated:", isAuthenticated);
   return (
     <Router>
       <Routes>
